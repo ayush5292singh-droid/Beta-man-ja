@@ -1297,3 +1297,109 @@ textarea:focus {
     scroll-behavior: auto !important;
   }
 }
+
+/* FINOVA — Premium Virtual Debit Card */
+
+.stats-grid .stat-card:first-child {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 190px;
+  padding: 24px;
+  border: 1px solid rgba(190, 255, 105, 0.4);
+  border-radius: 22px;
+  background:
+    radial-gradient(
+      circle at 92% 15%,
+      rgba(190, 255, 105, 0.2),
+      transparent 32%
+    ),
+    linear-gradient(135deg, #202b19, #090c09 65%, #172014);
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.35),
+    inset 0 1px rgba(255, 255, 255, 0.09);
+  animation: finoPremiumCard 5s ease-in-out infinite;
+}
+
+/* Premium card label and chip-like decoration */
+
+.stats-grid .stat-card:first-child::after {
+  content: "FINOVA  •  DEBIT";
+  position: absolute;
+  z-index: -1;
+  top: 22px;
+  right: 20px;
+  width: 116px;
+  height: 88px;
+  padding-top: 0;
+  color: #d8ffad;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-align: right;
+  background:
+    radial-gradient(
+      circle at 91% 77%,
+      rgba(190, 255, 105, 0.9) 0 13px,
+      transparent 14px
+    ),
+    radial-gradient(
+      circle at 78% 77%,
+      rgba(190, 255, 105, 0.45) 0 13px,
+      transparent 14px
+    ),
+    linear-gradient(
+      90deg,
+      transparent 0 4px,
+      #c9d5a4 4px 6px,
+      #788963 6px 24px,
+      #c9d5a4 24px 26px,
+      transparent 26px
+    );
+  background-size: auto, auto, 30px 23px;
+  background-position: center, center, left 43px;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.stats-grid .stat-card:first-child .stat-label {
+  position: relative;
+  z-index: 1;
+  color: #bdcdb1;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.stats-grid .stat-card:first-child .stat-value {
+  position: relative;
+  z-index: 1;
+  margin-top: 25px;
+  color: #d4ff91;
+  font-size: clamp(24px, 4vw, 34px);
+  font-weight: 850;
+  letter-spacing: -0.8px;
+  text-shadow: 0 0 22px rgba(190, 255, 105, 0.12);
+}
+
+@keyframes finoPremiumCard {
+  0%, 100% {
+    box-shadow:
+      0 18px 45px rgba(0, 0, 0, 0.35),
+      0 0 0 rgba(190, 255, 105, 0);
+  }
+  50% {
+    box-shadow:
+      0 18px 45px rgba(0, 0, 0, 0.35),
+      0 0 22px rgba(190, 255, 105, 0.09);
+  }
+}
+
+@media (max-width: 600px) {
+  .stats-grid .stat-card:first-child {
+    min-height: 175px;
+    padding: 19px;
+    border-radius: 19px;
+  }
+}
